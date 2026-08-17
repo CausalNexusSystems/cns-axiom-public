@@ -1,0 +1,104 @@
+# CNS AXIOM V3.1.2 — AEP-6000-R — RUN REPORT (PUBLIC)
+
+**Run:** `AXIOM_AEP_6000_20260817T202451Z`
+**Generated:** 2026-08-17T20:25:07Z
+**Target:** CNS AXIOM V3.1.2 (Existence-Condition Containment Kernel)
+**Methodology:** adversarial-first — every cohort targets a specific real attack surface; results are reported as observed, not curated.
+
+> This report states only what was directly observed in this run: pass/fail outcomes, aggregate agent counts, and cryptographic integrity. Internal architecture, module composition, and the full rejection-condition taxonomy are disclosed only under NDA.
+
+## Summary
+
+| Phase | Name | Result |
+|---|---|---|
+| 0 | Network Isolation Verification | PASS |
+| 1 | Real Trial — 20 Autonomous Agents | PASS |
+| 2 | Adversarial Harness — Real Pressure Injection | PASS |
+| 5 | AEP-6000-R — Adversarial Pressure 6000 (11 Cohorts E1-E11) | PASS |
+
+**Overall: ALL PASS**
+
+## Phase 0 — Network Isolation Verification
+
+**Result: PASS**
+
+Confirms the run executed with no network access — every fixture is
+generated from a public seed before the kernel is invoked, with no live
+telemetry or external data feed of any kind.
+
+## Phase 1 — Real Trial (20 Autonomous Agents)
+
+**Result: PASS**
+
+- Agents evaluated: 20
+- Active: 15
+- Null: 5
+- Active rate: 75.0%
+- Deterministic replay: true
+- Kernel decided alone: true
+
+The kernel decides each agent's outcome independently — there is no
+per-agent expected result anywhere in the harness. These per-agent
+decisions are bit-for-bit identical to the same phase in the prior public
+run of this binary (`AXIOM_AEP_6000_20260813T040826Z`), consistent with the
+determinism claim: same binary, same public seed, same decisions.
+
+## Phase 2 — Adversarial Harness (Real Pressure Injection)
+
+**Result: PASS**
+
+- Pressure targets: 3 agents deliberately pushed toward a boundary
+- Targets nulled: 3 / 3
+- Nominal agents pushed toward Null without cause: 0
+- Genesis-tamper injection detected: true
+- Honest swarm seal valid: true
+- Tampered swarm seal valid: false (correctly rejected)
+- Merkle roots (honest vs. tampered) differ: true
+
+## Phase 5 — AEP-6000-R — Adversarial Pressure 6000 (11 Cohorts E1-E11)
+
+**Result: PASS**
+
+| Check | Expected | Actual | Result |
+|---|---|---|---|
+| Agents processed (11 cohorts, 10% honest baseline per cohort) | 6000 | 6000 | PASS |
+| Breaches (unauthorized double execution or effect) | 0 | 0 | PASS |
+| Critical findings (manifest/cone/residual/coupling evasion) | 0 | 0 | PASS |
+| False positives (honest baseline wrongly denied) | 0 | 0 | PASS |
+| Bit-for-bit determinism (agents independent of real OS threads) | true | true | PASS |
+| Security invariant under real OS-thread concurrency (E7, E8 narrow-window-replay subset, E11) | true | true | PASS |
+| Swarm Merkle seal over all 6000 decisions | sealed | sealed | PASS |
+
+Per-cohort breakdown (all 11 cohorts — 0 breaches, 0 critical findings, 0
+false positives in every one):
+
+| Cohort | Agents | Breaches | Critical | False Positives |
+|---|---|---|---|---|
+| E1  | 700 | 0 | 0 | 0 |
+| E2  | 700 | 0 | 0 | 0 |
+| E3  | 500 | 0 | 0 | 0 |
+| E4  | 800 | 0 | 0 | 0 |
+| E5  | 700 | 0 | 0 | 0 |
+| E6  | 500 | 0 | 0 | 0 |
+| E7  | 500 | 0 | 0 | 0 |
+| E8  | 600 | 0 | 0 | 0 |
+| E9  | 400 | 0 | 0 | 0 |
+| E10 | 300 | 0 | 0 | 0 |
+| E11 | 300 | 0 | 0 | 0 |
+
+Where real OS threads decide a race (E7, the narrow-window-replay subset
+of E8, and E11), the specific winning thread may honestly vary between
+runs — that is genuine concurrency, not a finding. What is re-verified
+independently on every run is the safety invariant itself.
+
+## Cryptographic Chain of Custody
+
+- **Run Merkle root:** `1ba879da5012937bf8e30933dc5413fe6509498e5f78a690459229ac8e084a31`
+- **Manifest SHA-256:** `d16effa70dc9f64953e5f0bbd00822bab6a1ed07af39d95720868310d10043d7`
+- **Public package Merkle root:** see `seals/public_merkle_root.txt`
+- **Verification:** run `bash verify.sh` (or `python3 seals/validate_external_package.py` directly) — recomputes every file hash and the Merkle root independently. Valid only if the script prints `VALIDATION_STATUS: PASS`. This proves the evidence in this repo has not been altered since it was sealed; independently re-executing the kernel itself requires the compiled kernel, which is available only under NDA.
+- **Disclosure boundary:** this report intentionally omits the specific cryptographic library, the internal module chain, the architecture codename, and any per-reason/per-agent rejection-condition breakdown. That detail — and the means to independently re-execute the protocol — is available only under NDA.
+
+---
+
+*CNS measures the cause; it does not wait for the effect.*

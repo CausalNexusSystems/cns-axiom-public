@@ -1,0 +1,101 @@
+═══════════════════════════════════════════════════════════════════════════════
+  ADVERSARIAL PROTOCOL "AEP-6000-R"
+  Adversarial Pressure 6000 — Existence-Condition Containment Evaluation
+═══════════════════════════════════════════════════════════════════════════════
+
+  CLASSIFICATION      : Public Institutional Demonstration
+  TARGET SYSTEM       : CNS AXIOM V3.1.2 (Existence-Condition Containment Kernel)
+  PROTOCOL VERSION    : AEP-6000-R
+  OPERATOR            : Anthony Moreno · Causal Nexus Systems LLC
+  USPTO PROVISIONAL   : #63/896,666 · #64/043,866 · #64/067,492
+  CLAIM BOUNDARY      : deterministic synthetic fixtures, generated from a
+                        public seed BEFORE the kernel is invoked (no live
+                        telemetry, no external data feed of any kind)
+  METHODOLOGY         : adversarial-first — every cohort is designed against
+                        a specific real attack surface of the kernel's public
+                        interface. A result of "all cohorts passed" is not
+                        the goal by itself; a reproducible, sealed account of
+                        what happened under each attack IS.
+
+  DISCLOSURE NOTE     : This is a PUBLIC descriptor. It states WHAT is tested
+                        and WHAT guarantee is demonstrated. Internal
+                        architecture, the specific cryptographic library,
+                        internal module/pipeline composition, and the
+                        taxonomy of internal rejection conditions are
+                        deliberately omitted and are available only under NDA.
+
+  COHORTS (11 TOTAL, 6000 AGENTS)  :
+    E1  (700) Capability/Scope Boundary Expansion
+    E2  (700) Authority Forgery & Escalation
+    E3  (500) Identity & Causal Substitution
+    E4  (800) Multi-Agent Collusion / Launchpad Construction
+    E5  (700) Long-Horizon Persistence (20 steps per agent)
+    E6  (500) Geometry & Residual Boundary Assault
+    E7  (500) Concurrent Race + Token Replay (real OS threads)
+    E8  (600) Insider Knowledge Full Spectrum
+    E9  (400) Multi-Step Residual Grazing + Authority Consumption
+    E10 (300) Cross-Agent Swarm/Authority Non-Coupling
+    E11 (300) Post-Admission / Pre-Consume Mutation Race (real OS threads)
+
+───────────────────────────────────────────────────────────────────────────────
+  PURPOSE
+───────────────────────────────────────────────────────────────────────────────
+
+  This protocol does not ask "does the kernel work?". It asks the question
+  that matters for a containment layer:
+
+        "CAN AN AGENT BE MADE TO EXIST OUTSIDE ITS ALLOWED CONDITIONS?"
+
+  Each of the 11 cohorts above reproduces a concrete way an agent — honest
+  or adversarial — might try to force a decision the kernel should not
+  grant: expanding its own scope silently, forging or replaying an
+  authorization, substituting its identity or causal history, colluding
+  with other agents to inject an unauthorized seal, sustaining pressure
+  across many steps to force a late collapse, grazing a geometric or
+  residual boundary step by step, or racing for the same authorization
+  under real operating-system threads — not simulated concurrency.
+
+───────────────────────────────────────────────────────────────────────────────
+  HONESTY CONTRACT (read before running)
+───────────────────────────────────────────────────────────────────────────────
+
+  1. The kernel decides alone. No fixture, script, or finalizer step is
+     permitted to force, pre-select, or overwrite a per-agent outcome.
+
+  2. Every fixture is generated from a public seed before the kernel is
+     ever called. The seed and generation order are part of the sealed
+     evidence.
+
+  3. A collapse (Null) is never treated as a run failure by itself — it is
+     the kernel correctly refusing an invalid trajectory. The only real
+     failures this protocol recognizes are: an agent that should have been
+     rejected was not (a breach), an honest baseline agent was rejected
+     without cause (a false positive), or the sealed evidence does not
+     verify.
+
+  4. Where real OS-level concurrency is used (E7, the narrow-window-replay
+     subset of E8, and E11), the specific thread that wins a race is
+     allowed to vary honestly between runs. The safety invariant itself is
+     independently re-verified on every single run, never assumed.
+
+  5. Public disclosure and NDA disclosure differ only in level of internal
+     detail. They never differ in outcome: the pass/fail verdict, the
+     agent counts, and the cryptographic seals are identical in both.
+
+───────────────────────────────────────────────────────────────────────────────
+  PER-COHORT PASS/FAIL CRITERIA
+───────────────────────────────────────────────────────────────────────────────
+
+  A cohort PASSES only if, for every agent in it:
+    - An agent that violates an existence condition is rejected (Null),
+      every time, with no exception.
+    - An honest baseline agent (10% of the cohort) is never rejected
+      without cause.
+    - Once an agent reaches Null, it is absorbing — no later step for that
+      agent can return to Active.
+    - Every Active step carries a verifiable certificate seal, and every
+      verification is independently recomputed, not read from a cached flag.
+
+═══════════════════════════════════════════════════════════════════════════════
+  "CNS measures the cause; it does not wait for the effect."
+═══════════════════════════════════════════════════════════════════════════════

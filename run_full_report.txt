@@ -1,0 +1,95 @@
+====================================================================
+Causal Nexus Systems LLC
+Run ID: AXIOM_AEP_6000_20260817T202451Z
+Title: CNS AXIOM Geometric Containment Run
+Subtitle: Deterministic Geometric Containment with Sealed Evidence — V3.1.2
+Anthony Moreno
+Founder & CEO
+USPTO Provisional #63/896,666, #64/043,866 & #64/067,492
+Location: Orlando, FL
+Execution mode: deterministic, local, no-cloud, offline
+Kernel/runtime: CNS AXIOM V3.1.2 (Existence-Condition Containment Kernel)
+Input origin: deterministic synthetic fixtures (offline, no telemetry required)
+Replay determinism: required and verified (same binary → same certificate seal)
+Evidence status: sealed (SHA-256 + Merkle root, native Python, zero deps)
+Disclosure note: internal architecture, module composition, and the full
+  taxonomy of internal rejection conditions are proprietary and are
+  disclosed only under NDA. This package reports pass/fail outcomes,
+  aggregate agent counts, and cryptographic integrity only.
+Claim boundary: see below
+====================================================================
+
+CLAIM BOUNDARY
+This run does not fabricate results. AXIOM (Existence-Condition Containment Kernel) V3.1.2 issues
+deterministic containment decisions over structured fixtures; every
+transition is certified with a SHA-256 seal and an independently
+verifiable Merkle root. No classified telemetry, live military ISR, or
+private critical infrastructure data is used. Zero-knowledge range-proof
+guards are used to bound values without revealing them: a genuine
+tolerance violation cannot even construct a valid proof. Hardware binding
+uses a software mock in this run — production TPM/HSM integration is the
+next engineering milestone.
+
+CNS measures the cause; it does not wait for the effect.
+
+
+FULL REPORT (PUBLIC)
+CNS AXIOM V3.1.2 — RUN SUMMARY
+run_id: AXIOM_AEP_6000_20260817T202451Z
+timestamp_utc: 2026-08-17T20:25:07Z
+kernel_version: 3.1.2
+
+PHASE RESULTS
+  [PASS]  Real Trial — 20 Autonomous Agents — Kernel Decides Alone
+  [PASS]  Adversarial Harness — Real Pressure Injection Against the Kernel
+  [PASS]  AXIOM Existence Containment Trial — Adversarial Pressure 6000 (AEP-6000-R) — 11 Cohorts E1-E11
+
+OVERALL: ALL PASS
+MERKLE_ROOT: 1ba879da5012937bf8e30933dc5413fe6509498e5f78a690459229ac8e084a31
+
+CNS measures the cause; it does not wait for the effect.
+NATIVE KERNEL RESULTS
+====================================================================
+Execution status: COMPLETED
+Agents evaluated: 20
+Active: 15
+Null: 5
+Active rate: 75.0%
+Deterministic replay: true
+Kernel decided alone: true
+Swarm MMR root: 82837702509f94f7227a4df0afe5368b93a14603531a2f80cecdcdfaafe6f471
+Swarm certificate valid: true
+Certificate chain verified: false
+
+AGENT DECISIONS
+  Agent 00 [minimal] -> Null
+  Agent 01 [minimal] -> Active
+  Agent 02 [minimal] -> Active
+  Agent 03 [minimal] -> Null
+  Agent 04 [minimal] -> Active
+  Agent 05 [read_only] -> Active
+  Agent 06 [read_only] -> Active
+  Agent 07 [read_only] -> Null
+  Agent 08 [read_only] -> Null
+  Agent 09 [read_only] -> Active
+  Agent 10 [write_bounded] -> Active
+  Agent 11 [write_bounded] -> Active
+  Agent 12 [write_bounded] -> Null
+  Agent 13 [write_bounded] -> Active
+  Agent 14 [write_bounded] -> Active
+  Agent 15 [full] -> Active
+  Agent 16 [full] -> Active
+  Agent 17 [full] -> Active
+  Agent 18 [full] -> Active
+  Agent 19 [full] -> Active
+
+ADVERSARIAL RESULTS
+====================================================================
+Pressure targets: [5, 9, 15]
+Targets nulled: 3
+Nominal Active: 17
+Nominal Null: 0
+Genesis tamper detected: true
+Honest swarm valid: true
+Contaminated swarm valid: false
+MMR roots differ: true
