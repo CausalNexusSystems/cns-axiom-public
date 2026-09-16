@@ -1,0 +1,65 @@
+NOTICE
+======
+
+CNS AXIOM V3.3.0 — AEP-8000-R Public Evidence Release
+Copyright (c) 2026 Causal Nexus Systems LLC. All rights reserved.
+
+WHAT THIS REPOSITORY IS
+------------------------
+This repository publishes evidence artifacts — pass/fail outcomes,
+aggregate agent counts, and cryptographic integrity seals — from two
+independent executions of the CNS AXIOM kernel's AEP-8000-R protocol.
+It is published for public inspection and independent verification of
+that disclosed evidence only.
+
+WHAT THIS REPOSITORY IS NOT
+-----------------------------
+This repository does not include the AXIOM kernel, its source code, its
+build system, or any part of its underlying implementation. Nothing in
+this repository grants, or should be read as granting, any license
+(express, implied, or by estoppel) under any patent, copyright, trade
+secret, or other intellectual property right of Causal Nexus Systems LLC,
+including without limitation any right under USPTO Provisional
+Applications #63/896,666, #64/043,866, and #64/067,492 referenced in the
+included protocol descriptor and reports.
+
+No permission is granted to reproduce, modify, reverse-engineer, or
+create derivative works of any proprietary AXIOM implementation detail
+based on the contents of this repository. The narrative documentation in
+this repository (including this file and the top-level README.md) may be
+redistributed for the sole purpose of accurately citing or discussing
+this evidence release, with attribution to Causal Nexus Systems LLC and
+without alteration of the underlying evidence artifacts.
+
+DISCLOSURE BOUNDARY
+---------------------
+As stated throughout the included reports: internal architecture, module
+composition, specific cryptographic primitives, and the full
+per-reason/per-agent rejection-condition taxonomy are proprietary and are
+disclosed only under a separate non-disclosure agreement with Causal
+Nexus Systems LLC. Their absence from this repository is intentional and
+does not affect the pass/fail verdicts, agent counts, or cryptographic
+seals disclosed here.
+
+NO WARRANTY
+------------
+The evidence artifacts in this repository are provided "as is," without
+warranty of any kind, express or implied, including but not limited to
+any warranty of merchantability, fitness for a particular purpose, or
+non-infringement. Causal Nexus Systems LLC makes no representation that
+this evidence, on its own, is sufficient for any particular regulatory,
+contractual, or procurement purpose.
+
+CONTACT
+--------
+For licensing inquiries, NDA-tier technical disclosure, or questions
+about this release, contact Causal Nexus Systems LLC.
+
+----------------------------------------------------------------------
+This NOTICE was drafted to state Causal Nexus Systems LLC's intent in
+plain language. It is not a substitute for legal advice. Given the
+active provisional patent filings referenced above, Causal Nexus Systems
+LLC should have qualified legal counsel review this NOTICE — and confirm
+whether a more formal LICENSE file is also needed — before this
+repository is made public.
+----------------------------------------------------------------------

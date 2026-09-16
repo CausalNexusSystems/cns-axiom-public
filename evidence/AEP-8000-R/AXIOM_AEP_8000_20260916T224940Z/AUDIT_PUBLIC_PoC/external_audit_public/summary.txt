@@ -1,0 +1,13 @@
+CNS AXIOM V3.3.0 - RUN SUMMARY (PUBLIC)
+run_id: AXIOM_AEP_8000_20260916T224940Z
+timestamp_utc: 2026-09-16T22:50:19Z
+kernel_version: 3.3.0
+
+total_agents_all_phases: 14020
+
+OVERALL: ALL PASS
+
+Internal architecture, module composition, and the full rejection-
+condition taxonomy are proprietary and disclosed only under NDA.
+
+CNS measures the cause; it does not wait for the effect.

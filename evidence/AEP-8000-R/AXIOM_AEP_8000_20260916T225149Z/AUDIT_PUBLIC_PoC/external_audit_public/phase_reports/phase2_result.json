@@ -1,0 +1,41 @@
+{
+  "phase": 2,
+  "name": "Adversarial Harness — Real Pressure Injection Against the Kernel",
+  "verdict": "PASS",
+  "timestamp": "2026-09-16T22:51:51Z",
+  "cases": [
+    {
+      "id": "P2.1",
+      "description": "ATTACK 1 — Agents #5 #9 #15 under geodesic pressure (v=2.5, kappa=0.9)",
+      "expected": "targets_nulled",
+      "actual": "3/3 targets -> Null | 17 others Active | 0 others Null",
+      "pass": true,
+      "detail": "Targets collapsed: 3/3 | Nominal Active: 17 | Nominal Null: 0"
+    },
+    {
+      "id": "P2.2",
+      "description": "ATTACK 2 — 1-bit genesis tamper detected by verify_certificate",
+      "expected": "detected",
+      "actual": "detected=true reject_code=8",
+      "pass": true,
+      "detail": "Reject(8) = SEAL_MISMATCH. Detected: true."
+    },
+    {
+      "id": "P2.3",
+      "description": "ATTACK 3 — Injection of an unauthorized seal into the MMR swarm rejected",
+      "expected": "detected",
+      "actual": "detected=true roots_differ=true",
+      "pass": true,
+      "detail": "Honest: VALID | Contaminated: INVALID | Roots differ: true | Detected: true"
+    },
+    {
+      "id": "P2.4",
+      "description": "CTV2 of unattacked agents that resulted in Active verify externally",
+      "expected": "all_verified",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "seal": "000da71721ec4e7ac012f3d711b78b9801359563d6e39335fe530030c725846f"
+}

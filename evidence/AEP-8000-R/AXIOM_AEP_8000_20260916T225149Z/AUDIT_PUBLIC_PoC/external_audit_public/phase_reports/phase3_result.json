@@ -1,0 +1,49 @@
+{
+  "phase": 3,
+  "name": "Insider Threat Trial — 1000 Agents — Integrated Path (Kernel + Effect Gate V1)",
+  "verdict": "PASS",
+  "timestamp": "2026-09-16T22:51:51Z",
+  "cases": [
+    {
+      "id": "P3.1",
+      "description": "1000 agents processed (100 insider + 900 outsider) over submit_authorized_effect_v1",
+      "expected": "1000",
+      "actual": "1000",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P3.2",
+      "description": "Zero breaches — no agent without valid authority/geometry obtained EffectOutcomeV1::Executed",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P3.3",
+      "description": "Zero critical findings — no evasion of the manifest compiler, cone, or cryptographic verification",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P3.4",
+      "description": "Zero false positives — no honest agent (baseline H) was wrongly denied",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P3.5",
+      "description": "Determinism — two independent runs with the same seed produce the same result for all 1000 agents",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "seal": "f7c37d7e64c8edca3b121183c6717bcd7e792254ddb3197eca977a5742aad85e"
+}

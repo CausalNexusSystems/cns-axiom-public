@@ -1,0 +1,65 @@
+{
+  "phase": 1,
+  "name": "Real Trial — 20 Autonomous Agents — Kernel Decides Alone",
+  "verdict": "PASS",
+  "timestamp": "2026-09-16T22:49:44Z",
+  "cases": [
+    {
+      "id": "P1.1",
+      "description": "Network isolated throughout the entire trial",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P1.2",
+      "description": "The kernel evaluated 20 agents with inputs generated from a public seed — no prediction by the harness",
+      "expected": "20",
+      "actual": "20",
+      "pass": true,
+      "detail": "seed=CNS-AXIOM-TRIAL-REAL-V1-20AGENTS"
+    },
+    {
+      "id": "P1.3",
+      "description": "Rate of Active agents (the kernel decides — there is no predefined expected outcome)",
+      "expected": "kernel_decides",
+      "actual": "15/20 (75.0%)",
+      "pass": true,
+      "detail": "The percentage is decided by the kernel's geometry, not the harness"
+    },
+    {
+      "id": "P1.4",
+      "description": "All CTV2 certificates of Active agents verify externally without executing the kernel",
+      "expected": "all_verified",
+      "actual": "true",
+      "pass": true,
+      "detail": "active_agents=15"
+    },
+    {
+      "id": "P1.5",
+      "description": "Determinism: 3 runs with an identical seed produce bit-for-bit identical decisions",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": "Public seed → identical inputs → kernel produces identical output"
+    },
+    {
+      "id": "P1.6",
+      "description": "Swarm MMR sealed with the agents the kernel certified",
+      "expected": "mmr_rooted",
+      "actual": "root=82837702509f94f7…",
+      "pass": true,
+      "detail": "swarm_cert_valid=true"
+    },
+    {
+      "id": "P1.7",
+      "description": "Collapse reasons recorded faithfully — exactly what the kernel reported",
+      "expected": "recorded",
+      "actual": "2 collapse types",
+      "pass": true,
+      "detail": "{\"ConeInvalid\": 1, \"ResidualOverflow\": 4}"
+    }
+  ],
+  "seal": "4debe960d896fd09789d705636a6d6412977f8ae72706bcea09514f51cef0d5c"
+}

@@ -1,0 +1,57 @@
+{
+  "phase": 4,
+  "name": "Vanguard Trial — 5000 Agents — Public Evidence (Phase 1: 800 manifests, Phase 2: 1000 geodesic sweep, Phase 3: 3200 vanguard)",
+  "verdict": "PASS",
+  "timestamp": "2026-09-16T22:49:44Z",
+  "cases": [
+    {
+      "id": "P4.1",
+      "description": "5000 agents processed (800 phase1 + 1000 phase2 + 3200 vanguard)",
+      "expected": "5000",
+      "actual": "5000",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P4.2",
+      "description": "Zero breaches in the vanguard — no agent achieved double execution, duplicated authority, or an unauthorized effect",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P4.3",
+      "description": "Zero critical findings — no evasion of domain separation, cryptographic verification, or arithmetic invariants",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P4.4",
+      "description": "Bit-for-bit determinism — two independent runs with the same seed produce the same result for the 4500 agents that do not depend on real OS threads",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P4.4b",
+      "description": "V2 security invariant (at most 1 authorization per race scenario) independently verified in BOTH real runs with OS threads — the specific winning thread may honestly vary between runs, that is not a finding",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": "winner_identical_both_runs=false (informational)"
+    },
+    {
+      "id": "P4.5",
+      "description": "Swarm Merkle seal verified over the 5000 decisions (sealed evidence)",
+      "expected": "Some(root)",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "seal": "fb42a78836b292aaa92b46f17139c466525b55dcab68e802b307eca31d1988a1"
+}

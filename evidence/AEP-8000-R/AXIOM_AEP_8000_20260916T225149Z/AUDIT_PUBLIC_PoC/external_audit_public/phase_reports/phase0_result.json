@@ -1,0 +1,17 @@
+{
+  "phase": 0,
+  "name": "Network Isolation Verification",
+  "verdict": "PASS",
+  "timestamp": "2026-09-16T22:51:51Z",
+  "cases": [
+    {
+      "id": "P0.1",
+      "description": "No TCP connection reachable to public internet (8.8.8.8:53, 1.1.1.1:53, example.com:80)",
+      "expected": "ISOLATED",
+      "actual": "ISOLATED",
+      "pass": true,
+      "detail": "ISOLATED — no TCP connection to any public endpoint within 800ms"
+    }
+  ],
+  "seal": "60ebd7acb38d08e13261e17621205288af03b1d85a9c6aeb2c37f00d7301a72c"
+}

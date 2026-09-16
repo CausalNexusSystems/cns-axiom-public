@@ -1,0 +1,38 @@
+====================================================================
+Causal Nexus Systems LLC
+Run ID: AXIOM_AEP_8000_20260916T224940Z
+Title: CNS AXIOM Geometric Containment Run
+Subtitle: Deterministic Geometric Containment with Sealed Evidence — V3.3.0
+Anthony Moreno
+Founder & CEO
+USPTO Provisional #63/896,666, #64/043,866 & #64/067,492
+Location: Orlando, FL
+Execution mode: deterministic, local, no-cloud, offline
+Kernel/runtime: CNS AXIOM V3.3.0 (Existence-Condition Containment Kernel)
+Input origin: deterministic synthetic fixtures (offline, no telemetry required)
+Replay determinism: bit-for-bit verified for deterministic/non-concurrent
+  cohorts (same binary → same certificate seal); cohorts with real OS-thread
+  concurrency are evaluated by security-invariant equivalence instead --
+  the same safety property holds in every run, though the specific winning
+  thread may honestly vary. See PHASE RESULTS / phase_reports/ for which
+  cohorts fall in which category.
+Evidence status: sealed (SHA-256 + Merkle root, native Python, zero deps)
+Disclosure note: internal architecture, module composition, and the full
+  taxonomy of internal rejection conditions are proprietary and are
+  disclosed only under NDA. This package reports pass/fail outcomes,
+  aggregate agent counts, and cryptographic integrity only.
+Claim boundary: see below
+====================================================================
+
+CLAIM BOUNDARY
+This run does not fabricate results. AXIOM (Existence-Condition Containment Kernel) V3.3.0 issues
+deterministic containment decisions over structured fixtures; every
+transition is certified with a SHA-256 seal and an independently
+verifiable Merkle root. No classified telemetry, live military ISR, or
+private critical infrastructure data is used. Zero-knowledge range-proof
+guards are used to bound values without revealing them: a genuine
+tolerance violation cannot even construct a valid proof. Hardware binding
+uses a software mock in this run — production TPM/HSM integration is the
+next engineering milestone.
+
+CNS measures the cause; it does not wait for the effect.

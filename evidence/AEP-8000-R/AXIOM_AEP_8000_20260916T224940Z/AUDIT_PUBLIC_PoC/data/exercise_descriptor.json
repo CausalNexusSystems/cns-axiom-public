@@ -1,0 +1,129 @@
+{
+    "run_id": "AXIOM_AEP_8000_20260916T224940Z",
+    "timestamp_utc": "2026-09-16T22:50:19Z",
+    "kernel_version": "3.3.0",
+    "protocol": "AXIOM-PROTOCOL-1.0",
+    "public_seed": "CNS-AXIOM-AEP-8000-R-V1",
+    "total_agents": 8000,
+    "cohorts": [
+        {
+            "id": "E1",
+            "agents": 700,
+            "name": "Capability/Scope Boundary Expansion"
+        },
+        {
+            "id": "E2",
+            "agents": 700,
+            "name": "Authority Forgery & Escalation"
+        },
+        {
+            "id": "E3",
+            "agents": 500,
+            "name": "Identity & Causal Substitution"
+        },
+        {
+            "id": "E4",
+            "agents": 800,
+            "name": "Multi-Agent Collusion / Launchpad Construction"
+        },
+        {
+            "id": "E5",
+            "agents": 700,
+            "name": "Long-Horizon Persistence (20 steps per agent)"
+        },
+        {
+            "id": "E6",
+            "agents": 500,
+            "name": "Geometry & Residual Boundary Assault"
+        },
+        {
+            "id": "E7",
+            "agents": 500,
+            "name": "Concurrent Race + Token Replay (real OS threads)"
+        },
+        {
+            "id": "E8",
+            "agents": 600,
+            "name": "Insider Knowledge Full Spectrum"
+        },
+        {
+            "id": "E9",
+            "agents": 400,
+            "name": "Multi-Step Residual Grazing + Authority Consumption"
+        },
+        {
+            "id": "E10",
+            "agents": 300,
+            "name": "Cross-Agent Swarm/Authority Non-Coupling"
+        },
+        {
+            "id": "E11",
+            "agents": 300,
+            "name": "Post-Admission / Pre-Consume Mutation Race (real OS threads)"
+        },
+        {
+            "id": "E12",
+            "agents": 400,
+            "name": "Sub-Threshold Legitimate-Capability Chaining"
+        },
+        {
+            "id": "E13",
+            "agents": 500,
+            "name": "Distributed Low-and-Slow Race Injection (real OS threads)"
+        },
+        {
+            "id": "E14",
+            "agents": 500,
+            "name": "Cross-Domain Simultaneous Capability Contention (real OS threads, multiple independent authority domains)"
+        },
+        {
+            "id": "E15",
+            "agents": 600,
+            "name": "Adaptive Adversary Replay (rejection-informed, real kernel-driven adaptation each round)"
+        }
+    ],
+    "honest_baseline_fraction_per_cohort": 0.1,
+    "input_origin": "deterministic synthetic fixtures, generated before any kernel invocation",
+    "network_required": false,
+    "official_run": {
+        "phases_present": [
+            "Network Isolation Verification",
+            "Real Trial \u2014 20 Autonomous Agents",
+            "Adversarial Harness \u2014 Real Pressure Injection",
+            "Insider Threat Trial \u2014 1000 Agents",
+            "Vanguard Trial \u2014 5000 Agents",
+            "AEP-8000-R \u2014 Adversarial Pressure 8000"
+        ],
+        "total_agents_all_phases": 14020,
+        "insider_1000_results": {
+            "total_agents": 1000,
+            "insider_agents": 100,
+            "outsider_agents": 900,
+            "breaches": 0,
+            "false_positives": 0,
+            "critical_findings": 0,
+            "deterministic": true,
+            "verdict": "READY \u2014 0 breaches, 0 critical findings, 0 false positives"
+        },
+        "vanguard_5000_results": {
+            "total_agents": 5000,
+            "breaches": 0,
+            "critical_findings": 0,
+            "deterministic_non_concurrent": true,
+            "swarm_merkle_root": "aa4c7a5c9445c3c8c232544f50c77c665f9f81a555c9a9e91fc7cff4b6ba4f7d",
+            "verdict": "READY \u2014 0 breaches, 0 critical findings. Bit-for-bit determinism confirmed across 4500/4500 non-concurrent agents; V2 (500 agents, real OS threads) confirms the security invariant (at most 1 authorization per scenario) in BOTH independent runs (specific winner identical between runs: false)"
+        },
+        "aep_8000_results": {
+            "trial_name": "AXIOM Existence Containment Trial \u2014 Adversarial Pressure 8000 (AEP-8000-R)",
+            "public_seed": "CNS-AXIOM-AEP-8000-R-V1",
+            "n_cohorts": 15,
+            "total_agents": 8000,
+            "breaches": 0,
+            "false_positives": 0,
+            "critical_findings": 0,
+            "deterministic_non_concurrent": true,
+            "swarm_merkle_root": "ea4b7e57857db3ab090daf19449daa60a94b36dfb21d567799054b67b13d0d65",
+            "verdict": "READY \u2014 0 breaches, 0 critical findings, 0 false positives. Bit-for-bit determinism confirmed across the 6595 non-concurrent agents; the 1405 records with real OS threads (E7 + E8's InsiderNarrowWindowReplay + E11 + E13) confirm the safety invariant across BOTH independent runs (identical winner across runs: false)"
+        }
+    }
+}

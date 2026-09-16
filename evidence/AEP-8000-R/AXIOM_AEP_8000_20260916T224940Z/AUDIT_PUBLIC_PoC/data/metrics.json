@@ -1,0 +1,38 @@
+{
+    "run_id": "AXIOM_AEP_8000_20260916T224940Z",
+    "kernel_version": "3.3.0",
+    "total_agents_all_phases": 14020,
+    "phases": [
+        {
+            "name": "Network Isolation Verification",
+            "pass": true,
+            "phase": 0
+        },
+        {
+            "name": "Real Trial \u2014 20 Autonomous Agents",
+            "pass": true,
+            "phase": 1
+        },
+        {
+            "name": "Adversarial Harness \u2014 Real Pressure Injection",
+            "pass": true,
+            "phase": 2
+        },
+        {
+            "name": "Insider Threat Trial \u2014 1000 Agents",
+            "pass": true,
+            "phase": 3
+        },
+        {
+            "name": "Vanguard Trial \u2014 5000 Agents",
+            "pass": true,
+            "phase": 4
+        },
+        {
+            "name": "AEP-8000-R \u2014 Adversarial Pressure 8000",
+            "pass": true,
+            "phase": 5
+        }
+    ],
+    "all_pass": true
+}

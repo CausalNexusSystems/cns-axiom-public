@@ -1,0 +1,105 @@
+====================================================================
+CLASSIFICATION:   PUBLIC-SAFE DESCRIPTOR (no internal architecture detail)
+TARGET SYSTEM:    CNS AXIOM V3.3.0 (Existence-Condition Containment Kernel)
+PROTOCOL VERSION: AXIOM-PROTOCOL-1.0
+ORGANIZATION:     Causal Nexus Systems LLC
+AUTHOR:           Anthony Moreno, Founder & CEO
+IP BASIS:         USPTO Provisional #63/896,666, #64/043,866 & #64/067,492
+EXECUTION MODE:   deterministic, local, no-cloud, offline
+INPUT ORIGIN:     deterministic synthetic fixtures, generated from a public
+                  seed BEFORE the kernel is invoked (no live telemetry,
+                  no external data feed of any kind)
+====================================================================
+
+PURPOSE
+-------
+This protocol defines a single, repeatable evaluation of the AXIOM kernel:
+a fixed set of agents attempts to act inside the kernel's state manifold,
+and the kernel alone decides, for every single step, whether that action
+satisfies its existence conditions. There is no scripted outcome and no
+per-agent expected result baked in anywhere in this protocol. The kernel
+either issues Active (the trajectory exists and is certified) or Null
+(the trajectory has collapsed and cannot be resumed) — and every one of
+those decisions is sealed with SHA-256 and an independently verifiable
+Merkle root so that a third party never has to take our word for it.
+
+HONESTY CONTRACT (read before running)
+---------------------------------------
+1. The kernel decides alone. Nothing in this harness, this script, or the
+   finalizer is permitted to force, pre-select, or overwrite a per-agent
+   outcome. If a step is found doing that, it is a defect, not a feature.
+
+2. Every fixture is generated from a public seed before the kernel is
+   called. The seed and generation order are part of the sealed evidence,
+   so the input side of this run is exactly as auditable as the output
+   side.
+
+3. A collapse (Null) is never treated as a failure of the run. It is the
+   kernel correctly refusing to let an invalid trajectory exist. The only
+   real failures this protocol recognizes are: an agent that should have
+   been rejected was not (a breach), an honest baseline agent was rejected
+   without cause (a false positive), or the sealed evidence does not
+   verify.
+
+4. Where real OS-level concurrency is used (race and replay cohorts), the
+   specific thread that wins a given race is allowed to vary honestly
+   between runs. What must NOT vary is the safety invariant itself — that
+   invariant is independently re-verified on every single run, never
+   assumed from a prior one.
+
+5. Public disclosure and NDA disclosure differ only in level of internal
+   detail (crypto primitives, module composition, architecture codename,
+   and the full per-reason/per-agent rejection-condition breakdown are
+   NDA-only). They never differ in outcome. The pass/fail verdict, the
+   agent counts, and the cryptographic seals are identical in both
+   packages.
+
+PER-COHORT PASS/FAIL CRITERIA
+------------------------------
+A cohort PASSES only if all of the following hold for every agent in it:
+  - An agent that violates an existence condition is rejected (Null),
+    every time, with no exception.
+  - An honest baseline agent (the nominal fraction included in every
+    cohort) is never rejected without cause.
+  - Once an agent's trajectory reaches Null, it is absorbing: no later
+    step for that agent can return to Active.
+  - Every Active step carries a verifiable certificate seal; every
+    verification is independently recomputed, not read from a cached
+    flag.
+
+A cohort is marked REQUIRES CONFIRMATION instead of PASS only when its
+result legitimately depends on real OS thread scheduling (a genuine race
+outcome) rather than on the kernel's own decision — in that case the
+protocol checks the invariant, not the specific interleaving.
+
+OUTPUTS
+-------
+Each run produces, under its own timestamped run directory:
+
+  runs/<RUN_ID>/
+    phase0 .. phase5/            raw per-phase harness output (JSON + text)
+    data/                        machine-readable run manifest
+      exercise_descriptor.json
+      audit.json
+      metrics.json
+    descriptor/                  this document, copied verbatim at run start
+      AXIOM_PROTOCOL_DESCRIPTOR.txt
+    nda_technical_report/        FULL technical detail — NDA-only
+    external_audit_public/       minimal-disclosure package for any auditor
+    AXIOM_REPORT.md / .txt       top-level narrative report (public)
+    AUDIT_PUBLIC_PoC/            self-contained public verification bundle
+    AUDIT_NDA/                   AUDIT_PUBLIC_PoC/ + full NDA-only detail
+    seal/                        SHA-256 + Merkle proof of the whole run
+
+ROADMAP
+-------
+- Hardware root of trust: replace the current software mock with a real
+  TPM/HSM binding.
+- Extend adversarial cohort coverage as new attack surfaces are
+  identified against the kernel's actual public interface.
+- Independent third-party re-execution of this protocol, with results
+  published alongside ours for direct comparison.
+
+====================================================================
+CNS measures the cause; it does not wait for the effect.
+====================================================================

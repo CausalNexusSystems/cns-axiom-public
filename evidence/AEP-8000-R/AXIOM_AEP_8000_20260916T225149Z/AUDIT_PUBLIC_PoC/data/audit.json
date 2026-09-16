@@ -1,0 +1,303 @@
+{
+    "cns": {
+        "system": "Causal Nexus Systems (CNS)",
+        "product": "CNS_AXIOM_KERNEL",
+        "author": "Anthony Moreno",
+        "organization": "Causal Nexus Systems LLC",
+        "ip_basis": "USPTO Provisional #63/896,666, #64/043,866 & #64/067,492"
+    },
+    "run_id": "AXIOM_AEP_8000_20260916T225149Z",
+    "timestamp_utc": "2026-09-16T22:52:32Z",
+    "schema_version": "1.0",
+    "kind": "RUN_SEAL_PUBLIC",
+    "kernel_version": "3.3.0",
+    "synthetic": true,
+    "all_pass": true,
+    "phases": [
+        {
+            "name": "Real Trial — 20 Autonomous Agents — Kernel Decides Alone",
+            "pass": true
+        },
+        {
+            "name": "Adversarial Harness — Real Pressure Injection Against the Kernel",
+            "pass": true
+        },
+        {
+            "name": "Insider Threat Trial — 1000 Agents — Integrated Path (Kernel + Effect Gate V1)",
+            "pass": true
+        },
+        {
+            "name": "Vanguard Trial — 5000 Agents — Public Evidence (Phase 1: 800 manifests, Phase 2: 1000 geodesic sweep, Phase 3: 3200 vanguard)",
+            "pass": true
+        },
+        {
+            "name": "AXIOM Existence Containment Trial — Adversarial Pressure 8000 (AEP-8000-R) — 15 Cohorts E1-E15",
+            "pass": true
+        }
+    ],
+    "merkle_root": "7b9aed9503bb2aba293057e78e7bf15c22d913db618dd23e2c39c873c4575821",
+    "manifest_sha256": "f0b1f94f720a5164fa5aac274022e0f453eab226bd60d40262f613bf0eecf91b",
+    "claim_boundary": {
+        "public_source_only": true,
+        "live_telemetry_claimed": false,
+        "classified_telemetry_claimed": false,
+        "outcome_forcing": false,
+        "json_result_manipulation": false,
+        "hardware_root": "software_mock_only"
+    },
+    "evaluator_explanation": {
+        "what_this_run_is": "A multi-phase adversarial evaluation of CNS AXIOM V3.3.0 (Existence-Condition Containment Kernel). The kernel issues deterministic containment decisions: Active (the input satisfies the kernel's internal existence conditions) or Null (the input was rejected — an internal existence condition was violated). Every Active step emits a cryptographic certificate verifiable by any third party without running the kernel.",
+        "decision_scale": "Active = accepted and certified; Null = rejected (an internal existence condition was violated). The specific internal rejection-condition taxonomy is proprietary and is disclosed only under NDA.",
+        "how_to_verify": "1) Run: python3 external_audit_public/validate_external_package.py  2) Recompute SHA-256 of each file in public_files_sha256.csv and compare. 3) Recompute the Merkle root from the leaf hashes and compare with public_merkle_root.txt. Valid only if VALIDATION_STATUS: PASS.",
+        "determinism": "Deterministic kernel: identical input yields an identical certificate seal on any compliant environment.",
+        "zk_note": "Zero-knowledge range-proof guards bound values without revealing them. A genuine tolerance violation cannot even construct a valid proof — not 'fails to verify', but 'no code path produces a proof at all'."
+    },
+    "execution_status": "COMPLETED",
+    "kernel_results": {
+        "total_agents": 20,
+        "active": 15,
+        "null": 5,
+        "active_rate_pct": 75.0,
+        "swarm_mmr_root": "82837702509f94f7227a4df0afe5368b93a14603531a2f80cecdcdfaafe6f471",
+        "swarm_cert_valid": true,
+        "chain_verified": true,
+        "deterministic": true,
+        "kernel_decided_alone": true
+    },
+    "agent_decisions": [
+        {
+            "agent_id": 0,
+            "manifest_type": "minimal",
+            "decision": "Null",
+            "cert_seal": null,
+            "cert_verified_externally": null,
+            "steps_run": 1,
+            "steps_active": 0
+        },
+        {
+            "agent_id": 1,
+            "manifest_type": "minimal",
+            "decision": "Active",
+            "cert_seal": "588c14d742f6ce634634b93c1459d5119d0d51075e9d71a17e57ee68cacc51b2",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 2,
+            "manifest_type": "minimal",
+            "decision": "Active",
+            "cert_seal": "88675c4f45dcce691a7350c2b68cbee57e91537b22576f0e10cc67d81ff3b2a9",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 3,
+            "manifest_type": "minimal",
+            "decision": "Null",
+            "cert_seal": null,
+            "cert_verified_externally": null,
+            "steps_run": 1,
+            "steps_active": 0
+        },
+        {
+            "agent_id": 4,
+            "manifest_type": "minimal",
+            "decision": "Active",
+            "cert_seal": "28a24cd6d23796a2acfd991ca026052aace7655cedec1738d1b4ebba3579fd55",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 5,
+            "manifest_type": "read_only",
+            "decision": "Active",
+            "cert_seal": "79ef670f92e04fab28263a3b4775c1a4c3e4bdf2bdbd2ddcc7a8c6ddc0923e3f",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 6,
+            "manifest_type": "read_only",
+            "decision": "Active",
+            "cert_seal": "df136a39cbd873ba1332190af5c9c223f4f4c31ee148aae4c144313ab4835f92",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 7,
+            "manifest_type": "read_only",
+            "decision": "Null",
+            "cert_seal": null,
+            "cert_verified_externally": null,
+            "steps_run": 1,
+            "steps_active": 0
+        },
+        {
+            "agent_id": 8,
+            "manifest_type": "read_only",
+            "decision": "Null",
+            "cert_seal": null,
+            "cert_verified_externally": null,
+            "steps_run": 1,
+            "steps_active": 0
+        },
+        {
+            "agent_id": 9,
+            "manifest_type": "read_only",
+            "decision": "Active",
+            "cert_seal": "1a08dd15fc2127892bb5cfe84f058b9c3b34d86fa31e29b85f66439295592721",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 10,
+            "manifest_type": "write_bounded",
+            "decision": "Active",
+            "cert_seal": "6d47f0242acdb1a581e001ea095b66a102f88251315618e5b833807867eaba91",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 11,
+            "manifest_type": "write_bounded",
+            "decision": "Active",
+            "cert_seal": "1c4376f4e437f2e357c381de75ca15c200e460f9b825e8e913500af65f982c67",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 12,
+            "manifest_type": "write_bounded",
+            "decision": "Null",
+            "cert_seal": null,
+            "cert_verified_externally": null,
+            "steps_run": 1,
+            "steps_active": 0
+        },
+        {
+            "agent_id": 13,
+            "manifest_type": "write_bounded",
+            "decision": "Active",
+            "cert_seal": "ce08523eb725b9c30d4e4285b7e4450b3fa883b7f4903f0afb920275b63ab417",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 14,
+            "manifest_type": "write_bounded",
+            "decision": "Active",
+            "cert_seal": "fcc487487c8b358838d916049b73af8707fcb600900a83823232c03964437cb0",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 15,
+            "manifest_type": "full",
+            "decision": "Active",
+            "cert_seal": "acd84351dff073a91249fda1509940b080ff04744cee2fb6157b64e7f99fd3cb",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 16,
+            "manifest_type": "full",
+            "decision": "Active",
+            "cert_seal": "57bc3a82e9cbc3e93a0724d5a1d94baf4b9ce60da8d845750d5acfd8619b3f40",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 17,
+            "manifest_type": "full",
+            "decision": "Active",
+            "cert_seal": "cb6b2e416bd25d22bc0c683b9a9d014e941931b8a9d7340586d247d4c387f9c4",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 18,
+            "manifest_type": "full",
+            "decision": "Active",
+            "cert_seal": "2ca53f32cdad8e58062520c16d1806dca0f2a2209b3b635e8cbc40f6946d3ec5",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        },
+        {
+            "agent_id": 19,
+            "manifest_type": "full",
+            "decision": "Active",
+            "cert_seal": "7c3adc318787800a46e67097e62fee75bcb85dbad5da390517717ccf425a34c2",
+            "cert_verified_externally": true,
+            "steps_run": 1,
+            "steps_active": 1
+        }
+    ],
+    "adversarial_results": {
+        "pressure_targets": {
+            "targets": [
+                5,
+                9,
+                15
+            ],
+            "targets_nulled": 3,
+            "nominal_active": 17,
+            "nominal_null": 0
+        },
+        "genesis_tamper": {
+            "detected": true
+        },
+        "swarm_injection": {
+            "honest_agents": 17,
+            "injected_seals": 1,
+            "honest_valid": true,
+            "contaminated_valid": false,
+            "roots_differ": true,
+            "detected": true
+        }
+    },
+    "insider_1000_results": {
+        "total_agents": 1000,
+        "insider_agents": 100,
+        "outsider_agents": 900,
+        "breaches": 0,
+        "false_positives": 0,
+        "critical_findings": 0,
+        "deterministic": true,
+        "verdict": "READY — 0 breaches, 0 critical findings, 0 false positives"
+    },
+    "vanguard_5000_results": {
+        "total_agents": 5000,
+        "breaches": 0,
+        "critical_findings": 0,
+        "deterministic_non_concurrent": true,
+        "swarm_merkle_root": "aa4c7a5c9445c3c8c232544f50c77c665f9f81a555c9a9e91fc7cff4b6ba4f7d",
+        "verdict": "READY — 0 breaches, 0 critical findings. Bit-for-bit determinism confirmed across 4500/4500 non-concurrent agents; V2 (500 agents, real OS threads) confirms the security invariant (at most 1 authorization per scenario) in BOTH independent runs (specific winner identical between runs: false)"
+    },
+    "aep_8000_results": {
+        "trial_name": "AXIOM Existence Containment Trial — Adversarial Pressure 8000 (AEP-8000-R)",
+        "public_seed": "CNS-AXIOM-AEP-8000-R-V1",
+        "n_cohorts": 15,
+        "total_agents": 8000,
+        "breaches": 0,
+        "false_positives": 0,
+        "critical_findings": 0,
+        "deterministic_non_concurrent": true,
+        "swarm_merkle_root": "ea4b7e57857db3ab090daf19449daa60a94b36dfb21d567799054b67b13d0d65",
+        "verdict": "READY — 0 breaches, 0 critical findings, 0 false positives. Bit-for-bit determinism confirmed across the 6595 non-concurrent agents; the 1405 records with real OS threads (E7 + E8's InsiderNarrowWindowReplay + E11 + E13) confirm the safety invariant across BOTH independent runs (identical winner across runs: false)"
+    },
+    "total_agents_all_phases": 14020
+}

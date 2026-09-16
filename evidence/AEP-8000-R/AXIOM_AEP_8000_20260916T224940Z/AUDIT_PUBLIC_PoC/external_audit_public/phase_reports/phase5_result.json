@@ -1,0 +1,65 @@
+{
+  "phase": 5,
+  "name": "AXIOM Existence Containment Trial — Adversarial Pressure 8000 (AEP-8000-R) — 15 Cohorts E1-E15",
+  "verdict": "PASS",
+  "timestamp": "2026-09-16T22:49:45Z",
+  "cases": [
+    {
+      "id": "P5.1",
+      "description": "8000 agents processed (15 cohorts E1-E15, including a 10% honest baseline per cohort)",
+      "expected": "8000",
+      "actual": "8000",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P5.2",
+      "description": "Zero breaches — no agent without valid authority/geometry obtained double execution or an unauthorized effect",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P5.3",
+      "description": "Zero critical findings — no evasion of the compiled manifest, cone, residual, or coupling budget",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P5.4",
+      "description": "Zero false positives — no honest baseline agent (10% per cohort) was wrongly denied",
+      "expected": "0",
+      "actual": "0",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "P5.5",
+      "description": "Bit-for-bit determinism — two independent runs with the same seed produce the same result for the agents that do not depend on real OS threads (everything except E7, the InsiderNarrowWindowReplay subset of E8, E11, and E13)",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "P5.5b",
+      "description": "Security invariant of the records with real OS threads (E7 + InsiderNarrowWindowReplay of E8 + E11 + E13: at most 1 authorization per already-issued token under real concurrent consumption, and in E11 the mutated proposal never wins) independently verified in BOTH real runs — the specific winning thread may honestly vary between runs, that is not a finding",
+      "expected": "true",
+      "actual": "true",
+      "pass": true,
+      "detail": "winner_identical_both_runs=false (informational)"
+    },
+    {
+      "id": "P5.6",
+      "description": "Swarm Merkle seal verified over the 8000 decisions (sealed evidence)",
+      "expected": "Some(root)",
+      "actual": "true",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "seal": "717532a73b89996a234fbbb9fe752996d446ce588e47cbf233eccde9fa599212"
+}
